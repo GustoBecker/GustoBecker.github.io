@@ -26,10 +26,10 @@ h2 {
 }
 
 .countdown {
-  display: block;
+  display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: 100%;
+  margin-bottom: 40%;
 }
 
 .day,
