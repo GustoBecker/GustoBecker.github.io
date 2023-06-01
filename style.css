@@ -98,7 +98,7 @@ span.text{
 }
 @media screen and (max-width: 480px){
     .coming-soon{
-      width: 100%;
+      width: 40%;
       height: 25vmin;
       font-size: 8px;
     }
