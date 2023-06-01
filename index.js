@@ -1,24 +1,52 @@
-const countdown = () => {
-  // Specify the date and time we are counting down to.
-  const countDate = new Date("Sep 18, 2023 17:30:00").getTime();
-  const now = new Date().getTime();
-  const remainingTime = countDate - now;
+let dayBox = document.getElementById("day-box");
+let hrBox = document.getElementById("hr-box");
+let minBox = document.getElementById("min-box");
+let secBox = document.getElementById("sec-box");
 
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
+//Format: Date(year, month, day, hour, minute)
+//Year is counter from 0 to 11
 
-  const textDay = Math.floor(remainingTime / day);
-  const textHour = Math.floor((remainingTime % day) / hour);
-  const textMinute = Math.floor((remainingTime % hour) / minute);
-  const textSecond = Math.floor((remainingTime % minute) / second);
 
-  document.querySelector(".day").innerText = textDay > 0 ? textDay : 0;
-  document.querySelector(".hour").innerText = textHour > 0 ? textHour : 0;
-  document.querySelector(".minute").innerText = textMinute > 0 ? textMinute : 0;
-  document.querySelector(".second").innerText = textSecond > 0 ? textSecond : 0;
-};
+let endDate = new Date(2023,8,18,17,30);
+//Output value in milliseconds
+let endTime = endDate.getTime();
 
-// should use 500 as setInterval won't always run on time.
-setInterval(countdown, 500);
+function countdown(){
+    let todayDate = new Date();
+    //Output value in milliseconds
+    let todayTime = todayDate.getTime();
+
+    let remainingTime = endTime - todayTime;
+
+    //60sec => 1000 milliseconds
+    let oneMin = 60 * 1000;
+    //1hr => 60 minutes
+    let oneHr = 60 * oneMin;
+    //1 day => 24 hours
+    let oneDay = 24 * oneHr;
+
+    //Function to format number if it is single digit
+    let addZeroes = num => num < 10 ? `0${num}` : num;
+
+    //If end dat is before today date
+    if(endTime < todayTime){
+        clearInterval(i);
+        document.querySelector(".countdown").innerHTML = `<h1>Countdown had expired!</h1>`;
+    }
+    //If end date is not before today date
+    else{
+        //Calculating remaining days, hrs,mins ,secs
+        let daysLeft = Math.floor(remainingTime / oneDay);
+        let hrsLeft = Math.floor((remainingTime % oneDay) / oneHr);
+        let minsLeft = Math.floor((remainingTime % oneHr) / oneMin);
+        let secsLeft = Math.floor((remainingTime % oneMin) / 1000);
+
+        //Displaying Valurs
+        dayBox.textContent = addZeroes(daysLeft);
+        hrBox.textContent = addZeroes(hrsLeft);
+        minBox.textContent = addZeroes(minsLeft);
+        secBox.textContent = addZeroes(secsLeft);
+    }
+}
+let i = setInterval(countdown,1000);
+countdown();
