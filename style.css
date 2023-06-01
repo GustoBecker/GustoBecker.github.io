@@ -22,14 +22,14 @@ h2 {
   flex-direction: column;
   justify-content: center;
   background-image: url("./Imagens/nos2.jpg");
-  background-size: 35%;
+  background-size: cover;
 }
 
 .countdown {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: cover;
+  margin-bottom: 90%;
 }
 
 .day,
