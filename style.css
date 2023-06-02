@@ -12,7 +12,7 @@ body{
 h2 {
   font-size: 45px;
   font-weight: bold;
-  padding: 3rem;
+  padding: 0rem;
   color: black;
   font-family: stylesheet;
 }
@@ -22,7 +22,7 @@ h2 {
   display: flex;
   align-items: inherit;
   flex-direction: center;
-  justify-content: left;
+  justify-content: center;
   background-image: url("Imagens/nos2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,15 +47,15 @@ h2 {
     left: 50%;
 }
 .box{
-    width: 20vmin;
-    height: 20vmin;
+    width: 16vmin;
+    height: 16vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
     box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
-    font-size: 12px;
+    font-size: 10px;
 }
 .box:after{
     content: "";
@@ -91,8 +91,24 @@ span.text{
     gap: 10px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 15%;
-    left: 53%;
+    top: 25%;
+    left: 51%;
+    }
+    @media screen and (max-width: 1280px){
+    .countdown{
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 30%;
+    left: 51%;
+    }
+    .box{
+        height: 18vmin;
+        width: 18vmin;
+        font-size: 8px;
     }
 @media screen and (max-width: 1024px){
     .countdown{
@@ -102,20 +118,20 @@ span.text{
       gap: 10px;
       position: absolute;
       transform: translate(-50%,-50%);
-      top: 15%;
+      top: 20%;
       left: 50%;
     }
     h2 {
       font-size: 40px;
       font-weight: bold;
-      padding: 0rem;
+
       color: black;
       font-family: stylesheet;
     }
     .box{
-        height: 18vmin;
-        width: 18vmin;
-        font-size: 10px;
+        height: 10vmin;
+        width: 10vmin;
+        font-size: 8px;
     }
 }
 @media screen and (max-width: 800px){
