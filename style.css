@@ -181,9 +181,9 @@ span.text{
         gap: 15px;
     }
     .box{
-    width: 12vmin;
-    height: 12vmin;
-    font-size: 8px;
+        width: 100%;
+        height: 25vmin;
+        font-size: 8px;
     }
     .span.text{
         font-size: 1.5em;
