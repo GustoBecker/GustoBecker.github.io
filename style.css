@@ -151,7 +151,9 @@ span.text{
       background-size: auto 100%;
       background-repeat: no-repeat;
       background-position: bottom;
-      b
+      align-items: inherit;
+      flex-direction: center;
+      justify-content: center;
     }
     .countdown{
         gap: 15px;
