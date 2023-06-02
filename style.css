@@ -150,7 +150,7 @@ span.text{
       background-image: url("Imagens/nos3.jpg");
       background-size: auto 1005;
       background-repeat: no-repeat;
-      background-position: bottom;
+      background-position: center;
       align-items: inherit;
       flex-direction: center;
       justify-content: center;
